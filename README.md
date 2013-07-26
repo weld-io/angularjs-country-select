@@ -9,13 +9,11 @@ How to
 ----------------------
 
 Add the markup
-
 ```html
 <country-select data-ng-model="selectedCountry"></country-select>
 ```
 
 Add the dependency to your app's module.
-
 ```javascript
 angular.module('myApp', ['countrySelect']);
 ```
