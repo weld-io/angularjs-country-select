@@ -8,15 +8,13 @@ It uses the same countries [this gem](https://github.com/jamesds/country-select/
 How to
 ----------------------
 
-It's quite simple,
-
-1. Add the markup
+Add the markup
 
 ```html
 <country-select data-ng-model="selectedCountry"></country-select>
 ```
 
-2. Add the dependency to your app's module.
+Add the dependency to your app's module.
 
 ```javascript
 angular.module('myApp', ['countrySelect']);
