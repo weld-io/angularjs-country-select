@@ -3,10 +3,12 @@ AngularJS country select
 
 Country select is an AngularJS directive for picking countries from a list.
 
-It uses the same countries [this gem](https://github.com/jamesds/country-select/blob/master/lib/country-select.rb#L36-74) does. I'll try keeping the list up-to-date.
+It uses the same countries as the [country_select](https://github.com/stefanpenner/country_select) gem.
+
+This directive will display the country's name in `<option>` but will bind your `ng-model` to the ISO-3166 alpha-2 code of the selected country.
 
 How to
 ----------------------
 
-1. Add the markup ```<country-select data-ng-model="selectedCountry"></country-select>```
+1. Add the markup ```<div country-select ng-model="selectedCountry"></div>```
 2. Add the dependency to your app's module ```angular.module('myApp', ['countrySelect']);```
