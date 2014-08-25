@@ -254,13 +254,57 @@ angular.module('countrySelect', []).directive('countrySelect', function() {
 		{ code: "zw", name: "Zimbabwe"}
 	];
 
+	// Source: http://europa.eu/about-eu/countries/index_en.htm
+	var eu_countries = [
+		"Austria",
+		"Belgium",
+		"Bulgaria",
+		"Croatia",
+		"Cyprus",
+		"Czech Republic",
+		"Denmark",
+		"Estonia",
+		"Finland",
+		"France",
+		"Germany",
+		"Greece",
+		"Hungary",
+		"Ireland",
+		"Italy",
+		"Latvia",
+		"Lithuania",
+		"Luxembourg",
+		"Malta",
+		"Netherlands",
+		"Poland",
+		"Portugal",
+		"Romania",
+		"Slovakia",
+		"Slovenia",
+		"Spain",
+		"Sweden",
+		"United Kingdom"
+	];
+
 	return {
 		template: '<select ng-value="ngModel" ng-options="c.code as c.name for c in countries">',
 		replace: true,
-		scope: { ngModel: '=' },
+		scope: { ngModel: '=', isEu: '=' },
 
 		link: function(scope, elem, attrs) {
 			scope.countries = countries;
+
+			scope.$watch('ngModel', function (newVal) {
+				if (newVal !== undefined) {
+					var countryName = countries[elem.val()].name;
+					if (eu_countries.indexOf(countryName) > -1) {
+						scope.isEu = true;
+					}
+					else {
+						scope.isEu = false;
+					}
+				}
+			});
 		}
 
 	}
