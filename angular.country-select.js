@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('countrySelect').directive('countrySelect', function() {
+angular.module('countrySelect', []).directive('countrySelect', function() {
 
 	var countries = [
 		{ code: "af", name: "Afghanistan" },
